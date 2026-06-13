@@ -1,5 +1,6 @@
 <h1 align="center">Hi, I'm Ibrahim Hafez 👋</h1>
 <h3 align="center">Backend Software Engineer · Node.js · NestJS · TypeScript</h3>
+<p align="center"><em>I build production multi-tenant SaaS platforms end to end — from an empty repo to live product.</em></p>
 
 <p align="center">
   <a href="https://linkedin.com/in/ibrahim-hafez-923307254"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
@@ -13,17 +14,27 @@
 
 ### 👨‍💻 About me
 
-I'm a backend engineer with **3 years of experience** designing and shipping production **multi-tenant SaaS platforms** end to end. I work primarily in **Node.js, NestJS and TypeScript**, across both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB), and I've delivered systems for e-commerce marketplaces, EdTech / school management, dental clinics, booking, and point-of-sale.
+I'm a backend engineer with **3 years of experience** designing and shipping production **multi-tenant SaaS platforms** end to end. I work primarily in **Node.js, NestJS and TypeScript**, across both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB), and I've delivered systems for **e-commerce marketplaces, EdTech / school management, dental clinics, booking, and point-of-sale**.
 
-I gravitate toward the hard parts: **multi-tenancy and RBAC, payment integrations, real-time systems (WebSockets / SSE), message queues, caching strategies, and secure, well-documented REST & GraphQL APIs** built for high traffic.
+I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and WhatsApp/SMS integrations, real-time systems (WebSockets / SSE), message queues, caching strategies, and secure, well-documented REST & GraphQL APIs** built for high traffic.
 
-> 🦷 Fun fact: I'm a licensed dentist (B.D.S.) who pivoted into software engineering — which is exactly why I'm building a dental-clinic SaaS that understands the domain from the inside.
+> 🦷 I'm a licensed dentist (B.D.S.) who taught myself to code and pivoted into software engineering — so when I build a dental-clinic SaaS, I understand the domain from the inside.
 
-### 🚀 What I'm building
+### ⚡ Highlights
 
-- **[Intelladent](https://intelladent.com)** — Founder & engineer of a multi-tenant, multi-clinic **dental SaaS** (NestJS · Next.js · TypeORM · PostgreSQL · Redis · Bull). 200+ REST endpoints, a 7-role RBAC system, subscription billing, a 5-channel notification engine, AI-assisted clinical features, and 1,300+ automated tests.
-- **[kib-movies-api](https://github.com/IbrahimHafez1/kib-movies-api)** — A production-grade **NestJS REST API**: TMDB sync, Redis caching with O(1) invalidation, JWT-cookie auth with refresh-token rotation, ratings & watchlists, Docker, CI, and ~98% test coverage. *(public — feel free to read the code)*
-- **E-commerce, EdTech & POS** — a multi-vendor marketplace SaaS, a K-12 school-management platform ([Pupilera](https://app-dev.pupilera.com/)), and an e-commerce + culinary-education backend ([The Cooking School](https://shop.thecookingschooleg.com/en)) — with payments, SMS, and the **Meta WhatsApp Cloud API** integrated throughout.
+- 🏗️ Shipped **6+ production SaaS backends** end to end — architecture, data modeling, APIs, queues, deployment and CI
+- 🧱 Flagship is a **45,000-line** multi-tenant dental SaaS: **200+ endpoints, 48 entities, 1,340+ tests** across 74 Jest suites
+- 🔌 Integrated **payments (Kashier), SMS, Google OAuth, and the Meta WhatsApp Cloud API** into live products
+- ⚙️ Comfortable across **real-time (WebSockets/SSE), BullMQ queues, Redis caching, multi-tenant RBAC** and Swagger-documented APIs
+- ⚡ Performance work: cut a dropshipping platform's login from **~6s → <1s** and improved API response times ~40%
+
+### 🚀 Selected work
+
+- **[Intelladent](https://intelladent.com)** — *Founder & Engineer.* Multi-tenant, multi-clinic **dental SaaS** (NestJS · Next.js · TypeORM · PostgreSQL · Redis · Bull). 200+ REST endpoints, 7-role RBAC, subscription billing, a 5-channel notification engine (WebSocket / Web Push / email / SMS / WhatsApp), AI-assisted clinical features, and 1,340+ automated tests.
+- **Multi-vendor E-commerce Marketplace** — A Turborepo monorepo SaaS for Egyptian sellers (NestJS 11 · Prisma · PostgreSQL 16 · Next.js 15): 215+ endpoints, vendor subscriptions & payout ledgers, localized payments (Cash on Delivery, InstaPay, Vodafone Cash), SSE + Redis real-time, and BullMQ transactional-email flows.
+- **[Pupilera](https://app-dev.pupilera.com/)** — Multi-tenant **K-12 school-management** platform (NestJS 11 · TypeORM · PostgreSQL · Redis · Bull): 289 endpoints, 63 entities, 11-role RBAC, a gradebook with at-risk detection, finance with a double-entry ledger, and real-time chat.
+- **[The Cooking School](https://shop.thecookingschooleg.com/en)** — E-commerce + culinary-education backend (NestJS 11 · MariaDB · Redis): 94+ endpoints, Kashier payments, SMS OTP, course-booking with tiered refund policies, and Arabic-aware invoice PDFs.
+- **[Auto Drop](https://autodrop.me)** — Dropshipping backend integrating 4+ marketplaces (Salla, Zid, AliExpress) with real-time order sync via WebSockets and webhooks; optimized MongoDB to cut login from ~6s to under 1s.
 
 ### 🛠️ Tech Stack
 
