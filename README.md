@@ -4,6 +4,7 @@
 <p align="center">
   <a href="https://linkedin.com/in/ibrahim-hafez-923307254"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="mailto:ibrahimhafez24@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://wa.me/201011094565"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp"></a>
   <img src="https://img.shields.io/badge/Based%20in-Egypt-107C10?style=flat-square" alt="Egypt">
   <img src="https://img.shields.io/badge/Open%20to-Backend%20Roles-2E5496?style=flat-square" alt="Open to work">
 </p>
@@ -71,6 +72,7 @@ I gravitate toward the hard parts: **multi-tenancy and RBAC, payment integration
 
 - 💼 **LinkedIn:** [ibrahim-hafez](https://linkedin.com/in/ibrahim-hafez-923307254)
 - 📫 **Email:** [ibrahimhafez24@gmail.com](mailto:ibrahimhafez24@gmail.com)
+- 📱 **Phone / WhatsApp:** [+20 101 109 4565](https://wa.me/201011094565)
 - 🌍 Based in Egypt · open to backend / Node.js opportunities
 
 <sub>Backend · Multi-tenant SaaS · System Design · Payments · Real-time · API Integration</sub>
