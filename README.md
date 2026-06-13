@@ -34,6 +34,7 @@ I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and Wh
 - **Multi-vendor E-commerce Marketplace** — A Turborepo monorepo SaaS for Egyptian sellers (NestJS 11 · Prisma · PostgreSQL 16 · Next.js 15): 215+ endpoints, vendor subscriptions & payout ledgers, localized payments (Cash on Delivery, InstaPay, Vodafone Cash), SSE + Redis real-time, and BullMQ transactional-email flows.
 - **[Pupilera](https://app-dev.pupilera.com/)** — Multi-tenant **K-12 school-management** platform (NestJS 11 · TypeORM · PostgreSQL · Redis · Bull): 289 endpoints, 63 entities, 11-role RBAC, a gradebook with at-risk detection, finance with a double-entry ledger, and real-time chat.
 - **[The Cooking School](https://shop.thecookingschooleg.com/en)** — E-commerce + culinary-education backend (NestJS 11 · MariaDB · Redis): 94+ endpoints, Kashier payments, SMS OTP, course-booking with tiered refund policies, and Arabic-aware invoice PDFs.
+- **EndahQR** — A WhatsApp-driven **QR-sticker system for vehicles** — scan a windshield code to message the owner (NestJS 10 · PostgreSQL/Prisma · Redis · BullMQ). Integrates the **Meta WhatsApp Cloud API** with HMAC-verified webhooks, Redis-backed idempotency, a conversation state machine, and a retry/backoff outbound queue.
 - **[Auto Drop](https://autodrop.me)** — Dropshipping backend integrating 4+ marketplaces (Salla, Zid, AliExpress) with real-time order sync via WebSockets and webhooks; optimized MongoDB to cut login from ~6s to under 1s.
 
 ### 🛠️ Tech Stack
