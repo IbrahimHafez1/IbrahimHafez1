@@ -34,8 +34,10 @@ I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and Wh
 - **Multi-vendor E-commerce Marketplace** — A Turborepo monorepo SaaS for Egyptian sellers (NestJS 11 · Prisma · PostgreSQL 16 · Next.js 15): 215+ endpoints, vendor subscriptions & payout ledgers, localized payments (Cash on Delivery, InstaPay, Vodafone Cash), SSE + Redis real-time, and BullMQ transactional-email flows.
 - **[Pupilera](https://app-dev.pupilera.com/)** — Multi-tenant **K-12 school-management** platform (NestJS 11 · TypeORM · PostgreSQL · Redis · Bull): 289 endpoints, 63 entities, 11-role RBAC, a gradebook with at-risk detection, finance with a double-entry ledger, and real-time chat.
 - **[The Cooking School](https://shop.thecookingschooleg.com/en)** — E-commerce + culinary-education backend (NestJS 11 · MariaDB · Redis): 94+ endpoints, Kashier payments, SMS OTP, course-booking with tiered refund policies, and Arabic-aware invoice PDFs.
+- **POS Platform (Taqdum)** — Multi-tenant **point-of-sale backend** (TypeScript · Express.js · PostgreSQL/Sequelize): 3-tier RBAC (Organization → Market → Users), real-time inventory, automated VAT, invoice refund/rebuy, supplier management, thermal-receipt printing (80mm/A4), and Excel-based cross-market migration; deployed on Dokploy with JWT, Helmet, and rate limiting.
 - **EndahQR** — A WhatsApp-driven **QR-sticker system for vehicles** — scan a windshield code to message the owner (NestJS 10 · PostgreSQL/Prisma · Redis · BullMQ). Integrates the **Meta WhatsApp Cloud API** with HMAC-verified webhooks, Redis-backed idempotency, a conversation state machine, and a retry/backoff outbound queue.
 - **[Auto Drop](https://autodrop.me)** — Dropshipping backend integrating 4+ marketplaces (Salla, Zid, AliExpress) with real-time order sync via WebSockets and webhooks; optimized MongoDB to cut login from ~6s to under 1s.
+- **[Nugttah](https://nugttah.com)** — Backend RESTful APIs for a Saudi platform serving **thousands of users** (Node.js · MongoDB/Mongoose): designed well-structured schemas and refactored legacy APIs to modern async/await, improving maintainability and performance.
 
 ### 🛠️ Tech Stack
 
@@ -78,6 +80,10 @@ I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and Wh
 <p align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username=IbrahimHafez1&show_icons=true&hide_border=true&theme=tokyonight" alt="Ibrahim's GitHub stats">
   <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=IbrahimHafez1&layout=compact&hide_border=true&theme=tokyonight&langs_count=8" alt="Top languages">
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=IbrahimHafez1&hide_border=true&theme=tokyonight" alt="GitHub streak">
 </p>
 
 ### 🤝 Connect
