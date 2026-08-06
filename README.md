@@ -27,15 +27,21 @@ I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and Wh
 - 🔌 Integrated **payments (Kashier), SMS, Google OAuth, and the Meta WhatsApp Cloud API** into live products
 - ⚙️ Comfortable across **real-time (WebSockets/SSE), BullMQ queues, Redis caching, multi-tenant RBAC** and Swagger-documented APIs
 - ⚡ Performance work: cut a dropshipping platform's login from **~6s → <1s** and improved API response times ~40%
+- 🧩 **Open-source contributor to TypeORM** — merged upstream fix for a many-to-many data-loss regression ([typeorm#12711](https://github.com/typeorm/typeorm/pull/12711))
+
+### 🔓 Open Source
+
+- **[TypeORM](https://github.com/typeorm/typeorm)** — Diagnosed and fixed a data-loss regression where batch `save()` silently deleted many-to-many junction rows for entities whose relations were not loaded. Merged upstream with a regression test for the 2.0 milestone → [PR #12711](https://github.com/typeorm/typeorm/pull/12711) · [Issue #12710](https://github.com/typeorm/typeorm/issues/12710)
 
 ### 🚀 Selected work
 
 - **[Intelladent](https://intelladent.com)** — *Founder & Engineer.* Multi-tenant, multi-clinic **dental SaaS** (NestJS · Next.js · TypeORM · PostgreSQL · Redis · Bull). 200+ REST endpoints, 7-role RBAC, subscription billing, a 5-channel notification engine (WebSocket / Web Push / email / SMS / WhatsApp), AI-assisted clinical features, and 1,340+ automated tests.
 - **[MasrMart](https://masrmart.com)** — A multi-vendor **e-commerce marketplace** SaaS for Egyptian sellers (NestJS 11 · Prisma · PostgreSQL 16 · Next.js 15): 215+ endpoints, vendor subscriptions & payout ledgers, localized payments (Cash on Delivery, InstaPay, Vodafone Cash), SSE + Redis real-time, and BullMQ transactional-email flows.
-- **[Pupilera](https://app-dev.pupilera.com/)** — Multi-tenant **K-12 school-management** platform (NestJS 11 · TypeORM · PostgreSQL · Redis · Bull): 289 endpoints, 63 entities, 11-role RBAC, a gradebook with at-risk detection, finance with a double-entry ledger, and real-time chat.
+- **[Simbel AI](https://simbel.ai)** — **Marketing-AI SaaS** backend: rebuilt a production Python/CrewAI platform from scratch in **NestJS 11 · TypeORM · PostgreSQL (pgvector)** — 189 endpoints, 46 entities, an LLM router with tiered fallback chains and per-agent cost accounting, RAG over pgvector embeddings, Stripe billing with usage metering, and a web/worker Docker split for independent scaling.
+- **[Pupilera](https://app-dev.pupilera.com/)** — Multi-tenant **K-12 school-management** platform (NestJS 11 · TypeORM · PostgreSQL · Redis · Bull): 404 endpoints, 78 entities, per-school subdomain tenancy, 14-role RBAC with per-school custom roles, a gradebook with at-risk detection, finance with a double-entry ledger, real-time chat, and 1,229 unit tests plus e2e against real Postgres/Redis in CI.
 - **[The Cooking School](https://shop.thecookingschooleg.com/en)** — E-commerce + culinary-education backend (NestJS 11 · MariaDB · Redis): 94+ endpoints, Kashier payments, SMS OTP, course-booking with tiered refund policies, and Arabic-aware invoice PDFs.
 - **POS Platform (Taqdum)** — Multi-tenant **point-of-sale backend** (TypeScript · Express.js · PostgreSQL/Sequelize): 3-tier RBAC (Organization → Market → Users), real-time inventory, automated VAT, invoice refund/rebuy, supplier management, thermal-receipt printing (80mm/A4), and Excel-based cross-market migration; deployed on Dokploy with JWT, Helmet, and rate limiting.
-- **EndahQR** — A WhatsApp-driven **QR-sticker system for vehicles** — scan a windshield code to message the owner (NestJS 10 · PostgreSQL/Prisma · Redis · BullMQ). Integrates the **Meta WhatsApp Cloud API** with HMAC-verified webhooks, Redis-backed idempotency, a conversation state machine, and a retry/backoff outbound queue.
+- **EndahQR** — A WhatsApp-driven **QR-sticker system for vehicles** — scan a windshield code to message the owner (NestJS 10 · PostgreSQL/Prisma · Redis · BullMQ). Integrates the **Meta WhatsApp Cloud API** with HMAC-verified webhooks, Redis-backed idempotency, a conversation state machine, 24-hour messaging-window handling with approved-template fallback, durable inbound-event queueing, and plain-language send-failure surfacing with dead-letter management.
 - **[Auto Drop](https://autodrop.me)** — Dropshipping backend integrating 4+ marketplaces (Salla, Zid, AliExpress) with real-time order sync via WebSockets and webhooks; optimized MongoDB to cut login from ~6s to under 1s.
 - **[Nugttah](https://nugttah.com)** — Backend RESTful APIs for a Saudi platform serving **thousands of users** (Node.js · MongoDB/Mongoose): designed well-structured schemas and refactored legacy APIs to modern async/await, improving maintainability and performance.
 
