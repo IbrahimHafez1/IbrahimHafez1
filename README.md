@@ -84,11 +84,6 @@ I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and Wh
 ### 📊 GitHub Stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=IbrahimHafez1&show_icons=true&hide_border=true&theme=tokyonight" alt="Ibrahim's GitHub stats">
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=IbrahimHafez1&layout=compact&hide_border=true&theme=tokyonight&langs_count=8" alt="Top languages">
-</p>
-
-<p align="center">
   <img src="https://streak-stats.demolab.com/?user=IbrahimHafez1&hide_border=true&theme=tokyonight" alt="GitHub streak">
 </p>
 
