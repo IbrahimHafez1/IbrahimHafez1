@@ -27,11 +27,13 @@ I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and Wh
 - 🔌 Integrated **payments (Kashier), SMS, Google OAuth, and the Meta WhatsApp Cloud API** into live products
 - ⚙️ Comfortable across **real-time (WebSockets/SSE), BullMQ queues, Redis caching, multi-tenant RBAC** and Swagger-documented APIs
 - ⚡ Performance work: cut a dropshipping platform's login from **~6s → <1s** and improved API response times ~40%
-- 🧩 **Open-source contributor to TypeORM** — merged upstream fix for a many-to-many data-loss regression ([typeorm#12711](https://github.com/typeorm/typeorm/pull/12711))
+- 🧩 **Open-source contributor to TypeORM and Mongoose** — merged fixes for relation data loss and reliable batch-save retries ([typeorm#12711](https://github.com/typeorm/typeorm/pull/12711), [mongoose#16533](https://github.com/Automattic/mongoose/pull/16533))
 
 ### 🔓 Open Source
 
 - **[TypeORM](https://github.com/typeorm/typeorm)** — Diagnosed and fixed a data-loss regression where batch `save()` silently deleted many-to-many junction rows for entities whose relations were not loaded. Merged upstream with a regression test for the 2.0 milestone → [PR #12711](https://github.com/typeorm/typeorm/pull/12711) · [Issue #12710](https://github.com/typeorm/typeorm/issues/12710)
+
+- **[Mongoose](https://github.com/Automattic/mongoose)** — Fixed `bulkSave()` marking unattempted inserts and updates as saved after an ordered batch error. Preserved pending document state for retries while retaining unordered-write behavior; merged upstream with regression tests → [PR #16533](https://github.com/Automattic/mongoose/pull/16533)
 
 ### 🚀 Selected work
 
