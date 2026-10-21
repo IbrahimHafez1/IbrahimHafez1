@@ -27,13 +27,26 @@ I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and Wh
 - 🔌 Integrated **payments (Kashier), SMS, Google OAuth, and the Meta WhatsApp Cloud API** into live products
 - ⚙️ Comfortable across **real-time (WebSockets/SSE), BullMQ queues, Redis caching, multi-tenant RBAC** and Swagger-documented APIs
 - ⚡ Performance work: cut a dropshipping platform's login from **~6s → <1s** and improved API response times ~40%
-- 🧩 **Open-source contributor to TypeORM and Mongoose** — merged fixes for relation data loss and reliable batch-save retries ([typeorm#12711](https://github.com/typeorm/typeorm/pull/12711), [mongoose#16533](https://github.com/Automattic/mongoose/pull/16533))
+- 🧩 **9 merged contributions to TypeORM and Mongoose** — fixes for relation data loss, connection and cursor cleanup, composite keys, tree relations, query locks, and reliable batch-save retries ([details below](#-open-source))
 
 ### 🔓 Open Source
 
-- **[TypeORM](https://github.com/typeorm/typeorm)** — Diagnosed and fixed a data-loss regression where batch `save()` silently deleted many-to-many junction rows for entities whose relations were not loaded. Merged upstream with a regression test for the 2.0 milestone → [PR #12711](https://github.com/typeorm/typeorm/pull/12711) · [Issue #12710](https://github.com/typeorm/typeorm/issues/12710)
+**9 merged contributions: 6 to [TypeORM](https://github.com/typeorm/typeorm) and 3 to [Mongoose](https://github.com/Automattic/mongoose).**
 
-- **[Mongoose](https://github.com/Automattic/mongoose)** — Fixed `bulkSave()` marking unattempted inserts and updates as saved after an ordered batch error. Preserved pending document state for retries while retaining unordered-write behavior; merged upstream with regression tests → [PR #16533](https://github.com/Automattic/mongoose/pull/16533)
+**TypeORM**
+
+- **Preserve unloaded relations:** Fixed a data-loss regression where batch `save()` silently deleted many-to-many junction rows for entities whose relations were not loaded. Added a regression test; merged for the 2.0 milestone → [PR #12711](https://github.com/typeorm/typeorm/pull/12711) · [Issue #12710](https://github.com/typeorm/typeorm/issues/12710)
+- **Prevent initialization connection leaks:** Guarded overlapping `DataSource.initialize()` calls and cleaned up database/cache connections when initialization fails → [PR #12704](https://github.com/typeorm/typeorm/pull/12704)
+- **Fix CockroachDB shutdown hangs:** Released every tracked query runner before closing the connection pool, avoiding skipped connections when releasing runners mutates the tracking array → [PR #12891](https://github.com/typeorm/typeorm/pull/12891)
+- **Keep composite-key entities distinct:** Fixed grouping-key collisions that could drop entities or mix their related records while converting query results into entities → [PR #12905](https://github.com/typeorm/typeorm/pull/12905)
+- **Fix closure-table branch moves:** Read primary values through column metadata so moving a tree branch correctly removes old ancestor links when property and database column names differ → [PR #12907](https://github.com/typeorm/typeorm/pull/12907)
+- **Release SQL Server locks after subscriber errors:** Ensured failed query hooks release the runner's lock so subsequent queries do not wait indefinitely → [PR #12939](https://github.com/typeorm/typeorm/pull/12939)
+
+**Mongoose**
+
+- **Preserve failed bulk-save state:** Fixed `bulkSave()` marking unattempted inserts and updates as saved after an ordered batch error. Preserved pending document state for retries while retaining unordered-write behavior → [PR #16533](https://github.com/Automattic/mongoose/pull/16533)
+- **Await query-cursor cleanup:** Made stream destruction wait for the database driver's cursor cleanup and route cleanup failures through the existing stream error handler → [PR #16562](https://github.com/Automattic/mongoose/pull/16562)
+- **Reject failed cursor initialization:** Made `getDriverCursor()` reject with the stored initialization error instead of waiting indefinitely when called after initialization has already failed → [PR #16563](https://github.com/Automattic/mongoose/pull/16563)
 
 ### 🚀 Selected work
 
