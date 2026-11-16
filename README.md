@@ -27,11 +27,11 @@ I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and Wh
 - 🔌 Integrated **payments (Kashier), SMS, Google OAuth, and the Meta WhatsApp Cloud API** into live products
 - ⚙️ Comfortable across **real-time (WebSockets/SSE), BullMQ queues, Redis caching, multi-tenant RBAC** and Swagger-documented APIs
 - ⚡ Performance work: cut a dropshipping platform's login from **~6s → <1s** and improved API response times ~40%
-- 🧩 **9 merged contributions to TypeORM and Mongoose** — fixes for relation data loss, connection and cursor cleanup, composite keys, tree relations, query locks, and reliable batch-save retries ([details below](#-open-source))
+- 🧩 **10 selected merged contributions to TypeORM and Mongoose** — fixes for relation data loss, connection and cursor cleanup, composite keys, tree relations, query locks, and reliable batch-save retries ([details below](#-open-source))
 
 ### 🔓 Open Source
 
-**9 merged contributions: 6 to [TypeORM](https://github.com/typeorm/typeorm) and 3 to [Mongoose](https://github.com/Automattic/mongoose).**
+**10 selected merged contributions: 6 to [TypeORM](https://github.com/typeorm/typeorm) and 4 to [Mongoose](https://github.com/Automattic/mongoose).**
 
 **TypeORM**
 
@@ -47,6 +47,7 @@ I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and Wh
 - **Preserve failed bulk-save state:** Fixed `bulkSave()` marking unattempted inserts and updates as saved after an ordered batch error. Preserved pending document state for retries while retaining unordered-write behavior → [PR #16533](https://github.com/Automattic/mongoose/pull/16533)
 - **Await query-cursor cleanup:** Made stream destruction wait for the database driver's cursor cleanup and route cleanup failures through the existing stream error handler → [PR #16562](https://github.com/Automattic/mongoose/pull/16562)
 - **Reject failed cursor initialization:** Made `getDriverCursor()` reject with the stored initialization error instead of waiting indefinitely when called after initialization has already failed → [PR #16563](https://github.com/Automattic/mongoose/pull/16563)
+- **Preserve writes on transaction retry:** Restored pending document state before MongoDB retries a transaction after a transient commit error, so inserts and updates are sent again. Shipped in Mongoose 9.12.2. → [PR #16640](https://github.com/Automattic/mongoose/pull/16640)
 
 ### 🚀 Selected work
 
