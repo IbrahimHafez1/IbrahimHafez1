@@ -1,113 +1,74 @@
-<h1 align="center">Hi, I'm Ibrahim Hafez 👋</h1>
-<h3 align="center">Backend Software Engineer · Node.js · NestJS · TypeScript</h3>
-<p align="center"><em>I build production multi-tenant SaaS platforms end to end — from an empty repo to live product.</em></p>
+# Ibrahim Hafez
+**Backend Software Engineer** · Egypt · Open to remote backend roles
 
-<p align="center">
-  <a href="https://linkedin.com/in/ibrahim-hafez-923307254"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:ibrahimhafez24@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://wa.me/201011094565"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp"></a>
-  <img src="https://img.shields.io/badge/Based%20in-Egypt-107C10?style=flat-square" alt="Egypt">
-  <img src="https://img.shields.io/badge/Open%20to-Backend%20Roles-2E5496?style=flat-square" alt="Open to work">
-</p>
+I build backends in TypeScript, NestJS, and PostgreSQL. At Taqdum I owned four client backends. I’m also a licensed dentist, and the appointment and follow-up workflows in my own clinic shaped how I built Intelladent.
 
----
+[Explore my portfolio](https://ibrahimhafez.pages.dev/) · [Download my CV](https://ibrahimhafez.pages.dev/assets/Ibrahim-Hafez-CV.pdf) · [LinkedIn](https://linkedin.com/in/ibrahim-hafez-923307254) · [Email](mailto:ibrahimhafez24@gmail.com) · [WhatsApp](https://wa.me/201011094565)
 
-### 👨‍💻 About me
+## Selected work
 
-I'm a backend engineer with **3 years of experience** designing and shipping production **multi-tenant SaaS platforms** end to end. I work primarily in **Node.js, NestJS and TypeScript**, across both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB), and I've delivered systems for **e-commerce marketplaces, EdTech / school management, dental clinics, booking, and point-of-sale**.
+**Auto Drop · Sign-in from ~6 seconds to under 1 second**
 
-I'm drawn to the parts most people avoid: **multi-tenancy & RBAC, payment and WhatsApp/SMS integrations, real-time systems (WebSockets / SSE), message queues, caching strategies, and secure, well-documented REST & GraphQL APIs** built for high traffic.
+I traced the delay to bcrypt password verification. After a successful sign-in, the backend migrated the stored hash so returning users kept their passwords and subsequent sign-ins were faster. [Read the case study →](https://ibrahimhafez.pages.dev/case-studies/auto-drop-sign-in/)
 
-> 🦷 I'm a licensed dentist (B.D.S.) who taught myself to code and pivoted into software engineering — so when I build a dental-clinic SaaS, I understand the domain from the inside.
+**Intelladent · Managing access across clinics**
 
-### ⚡ Highlights
+I built a multi-tenant dental platform with role-based permissions. Background jobs handle reminders and treatment follow-ups, and the waitlist can fill an appointment when a slot opens. [Explore Intelladent →](https://ibrahimhafez.pages.dev/#intelladent)
 
-- 🏗️ Shipped **6+ production SaaS backends** end to end — architecture, data modeling, APIs, queues, deployment and CI
-- 🧱 Flagship is a **45,000-line** multi-tenant dental SaaS: **200+ endpoints, 48 entities, 1,340+ tests** across 74 Jest suites
-- 🔌 Integrated **payments (Kashier), SMS, Google OAuth, and the Meta WhatsApp Cloud API** into live products
-- ⚙️ Comfortable across **real-time (WebSockets/SSE), BullMQ queues, Redis caching, multi-tenant RBAC** and Swagger-documented APIs
-- ⚡ Performance work: cut a dropshipping platform's login from **~6s → <1s** and improved API response times ~40%
-- 🧩 **10 selected merged contributions to TypeORM and Mongoose** — fixes for relation data loss, connection and cursor cleanup, composite keys, tree relations, query locks, and reliable batch-save retries ([details below](#-open-source))
+**MasrMart · Protecting seller payouts**
 
-### 🔓 Open Source
+Order-time price snapshots preserve the amount a buyer agreed to pay. PostgreSQL advisory locks coordinate concurrent ledger updates. [Explore MasrMart →](https://ibrahimhafez.pages.dev/#masrmart)
 
-**10 selected merged contributions: 6 to [TypeORM](https://github.com/typeorm/typeorm) and 4 to [Mongoose](https://github.com/Automattic/mongoose).**
+<details>
+<summary>More backend projects</summary>
 
-**TypeORM**
+- **Simbel AI** — Used a unique index to prevent duplicate campaign starts and BullMQ workers to resume interrupted campaigns. [Engineering notes](https://ibrahimhafez.pages.dev/#simbel)
+- **Pupilera Admissions** — Indexed normalized Arabic and English school names for typo-tolerant search in PostgreSQL. [Engineering notes](https://ibrahimhafez.pages.dev/#pupilera)
+- **The Cooking School** — Used a row lock to prevent two concurrent checkouts from booking the same remaining place. [Engineering notes](https://ibrahimhafez.pages.dev/#cooking)
+- **Taqdum POS** — Built inventory, VAT, refunds, and receipt workflows for a multi-tenant point-of-sale backend.
+- **EndahQR** — Built a QR-to-WhatsApp vehicle messaging backend with verified webhooks, duplicate-event handling, and durable queues.
+- **Nugttah** — Designed MongoDB schemas and modernized legacy Node.js APIs for a Saudi platform. [Product](https://nugttah.com)
 
-- **Preserve unloaded relations:** Fixed a data-loss regression where batch `save()` silently deleted many-to-many junction rows for entities whose relations were not loaded. Added a regression test; merged for the 2.0 milestone → [PR #12711](https://github.com/typeorm/typeorm/pull/12711) · [Issue #12710](https://github.com/typeorm/typeorm/issues/12710)
-- **Prevent initialization connection leaks:** Guarded overlapping `DataSource.initialize()` calls and cleaned up database/cache connections when initialization fails → [PR #12704](https://github.com/typeorm/typeorm/pull/12704)
-- **Fix CockroachDB shutdown hangs:** Released every tracked query runner before closing the connection pool, avoiding skipped connections when releasing runners mutates the tracking array → [PR #12891](https://github.com/typeorm/typeorm/pull/12891)
-- **Keep composite-key entities distinct:** Fixed grouping-key collisions that could drop entities or mix their related records while converting query results into entities → [PR #12905](https://github.com/typeorm/typeorm/pull/12905)
-- **Fix closure-table branch moves:** Read primary values through column metadata so moving a tree branch correctly removes old ancestor links when property and database column names differ → [PR #12907](https://github.com/typeorm/typeorm/pull/12907)
-- **Release SQL Server locks after subscriber errors:** Ensured failed query hooks release the runner's lock so subsequent queries do not wait indefinitely → [PR #12939](https://github.com/typeorm/typeorm/pull/12939)
+</details>
+
+## Merged open-source contributions
+
+I’ve contributed 15 merged fixes across five repositories. Three examples show how ordinary backend operations can lose data.
+
+- **NestJS** could disconnect its Kafka producer while replies were still being serialized or sent. I made shutdown drain those replies and added a regression test against a real broker. [Review the fix · #18535](https://github.com/nestjs/nest/pull/18535)
+- **Mongoose** could lose pending writes when MongoDB retried a transaction after a transient commit error. I restored document state so the retry sends the inserts and updates again. [Review the fix · #16640](https://github.com/Automattic/mongoose/pull/16640)
+- **TypeORM** could delete many-to-many links during a batch save when the relation hadn’t been loaded. I fixed the regression and added a test for that case. [Review the fix · #12711](https://github.com/typeorm/typeorm/pull/12711)
+
+<details>
+<summary>Twelve more merged fixes</summary>
+
+**NestJS Schedule and node-mssql**
+
+- [Wait for active cron callbacks configured to finish during shutdown](https://github.com/nestjs/schedule/pull/2400)
+- [Let prepared statements and transactions finish while the SQL Server pool closes](https://github.com/tediousjs/node-mssql/pull/1959)
 
 **Mongoose**
 
-- **Preserve failed bulk-save state:** Fixed `bulkSave()` marking unattempted inserts and updates as saved after an ordered batch error. Preserved pending document state for retries while retaining unordered-write behavior → [PR #16533](https://github.com/Automattic/mongoose/pull/16533)
-- **Await query-cursor cleanup:** Made stream destruction wait for the database driver's cursor cleanup and route cleanup failures through the existing stream error handler → [PR #16562](https://github.com/Automattic/mongoose/pull/16562)
-- **Reject failed cursor initialization:** Made `getDriverCursor()` reject with the stored initialization error instead of waiting indefinitely when called after initialization has already failed → [PR #16563](https://github.com/Automattic/mongoose/pull/16563)
-- **Preserve writes on transaction retry:** Restored pending document state before MongoDB retries a transaction after a transient commit error, so inserts and updates are sent again. Shipped in Mongoose 9.12.2. → [PR #16640](https://github.com/Automattic/mongoose/pull/16640)
+- [Finish cursor cleanup when initialization fails or middleware skips it](https://github.com/Automattic/mongoose/pull/16612)
+- [Preserve pending writes after ordered batch errors](https://github.com/Automattic/mongoose/pull/16533)
+- [Wait for driver cleanup when destroying a cursor](https://github.com/Automattic/mongoose/pull/16562)
+- [Surface cursor initialization errors](https://github.com/Automattic/mongoose/pull/16563)
 
-### 🚀 Selected work
+**TypeORM**
 
-- **[Intelladent](https://intelladent.com)** — *Founder & Engineer.* Multi-tenant, multi-clinic **dental SaaS** (NestJS · Next.js · TypeORM · PostgreSQL · Redis · Bull). 200+ REST endpoints, 7-role RBAC, subscription billing, a 5-channel notification engine (WebSocket / Web Push / email / SMS / WhatsApp), AI-assisted clinical features, and 1,340+ automated tests.
-- **[MasrMart](https://masrmart.com)** — A multi-vendor **e-commerce marketplace** SaaS for Egyptian sellers (NestJS 11 · Prisma · PostgreSQL 16 · Next.js 15): 215+ endpoints, vendor subscriptions & payout ledgers, localized payments (Cash on Delivery, InstaPay, Vodafone Cash), SSE + Redis real-time, and BullMQ transactional-email flows.
-- **[Simbel AI](https://simbel.ai)** — **Marketing-AI SaaS** backend: rebuilt a production Python/CrewAI platform from scratch in **NestJS 11 · TypeORM · PostgreSQL (pgvector)** — 189 endpoints, 46 entities, an LLM router with tiered fallback chains and per-agent cost accounting, RAG over pgvector embeddings, Stripe billing with usage metering, and a web/worker Docker split for independent scaling.
-- **[Pupilera](https://pupilera.com/)** — Multi-tenant **K-12 school-management** platform (NestJS 11 · TypeORM · PostgreSQL · Redis · Bull): 404 endpoints, 78 entities, per-school subdomain tenancy, 14-role RBAC with per-school custom roles, a gradebook with at-risk detection, finance with a double-entry ledger, real-time chat, and 1,229 unit tests plus e2e against real Postgres/Redis in CI.
-- **[The Cooking School](https://thecookingschooleg.com/)** — E-commerce + culinary-education backend (NestJS 11 · MariaDB · Redis): 94+ endpoints, Kashier payments, SMS OTP, course-booking with tiered refund policies, and Arabic-aware invoice PDFs.
-- **POS Platform (Taqdum)** — Multi-tenant **point-of-sale backend** (TypeScript · Express.js · PostgreSQL/Sequelize): 3-tier RBAC (Organization → Market → Users), real-time inventory, automated VAT, invoice refund/rebuy, supplier management, thermal-receipt printing (80mm/A4), and Excel-based cross-market migration; deployed on Dokploy with JWT, Helmet, and rate limiting.
-- **EndahQR** — A WhatsApp-driven **QR-sticker system for vehicles** — scan a windshield code to message the owner (NestJS 10 · PostgreSQL/Prisma · Redis · BullMQ). Integrates the **Meta WhatsApp Cloud API** with HMAC-verified webhooks, Redis-backed idempotency, a conversation state machine, 24-hour messaging-window handling with approved-template fallback, durable inbound-event queueing, and plain-language send-failure surfacing with dead-letter management.
-- **[Auto Drop](https://autodrop.me)** — Dropshipping backend integrating 4+ marketplaces (Salla, Zid, AliExpress) with real-time order sync via WebSockets and webhooks; optimized MongoDB to cut login from ~6s to under 1s.
-- **[Nugttah](https://nugttah.com)** — Backend RESTful APIs for a Saudi platform serving **thousands of users** (Node.js · MongoDB/Mongoose): designed well-structured schemas and refactored legacy APIs to modern async/await, improving maintainability and performance.
+- [Release the query runner after failed cache removals](https://github.com/typeorm/typeorm/pull/12938)
+- [Release SQL Server locks after subscriber errors](https://github.com/typeorm/typeorm/pull/12939)
+- [Prevent composite-key grouping collisions](https://github.com/typeorm/typeorm/pull/12905)
+- [Clean up failed connection initialization](https://github.com/typeorm/typeorm/pull/12704)
+- [Release query runners on CockroachDB shutdown](https://github.com/typeorm/typeorm/pull/12891)
+- [Remove stale ancestor links when moving a tree branch](https://github.com/typeorm/typeorm/pull/12907)
 
-### 🛠️ Tech Stack
+</details>
 
-**Languages & Frameworks**
+## Tools I work with
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+**Backend** · TypeScript, Node.js, NestJS, Express
 
-**Databases & ORM**
+**Data and queues** · PostgreSQL, MariaDB, MongoDB, TypeORM, Prisma, Redis, BullMQ
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL%2FMariaDB-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
-![TypeORM](https://img.shields.io/badge/TypeORM-FE0803?style=flat-square&logo=typeorm&logoColor=white)
-
-**Infrastructure & Tools**
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![BullMQ](https://img.shields.io/badge/BullMQ-EC4A3B?style=flat-square&logo=redis&logoColor=white)
-![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socket.io&logoColor=white)
-![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white)
-![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=flat-square&logo=swagger&logoColor=black)
-![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
-
-**Testing**
-
-![Jest](https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=jest&logoColor=white)
-![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white)
-![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
-
-### 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=IbrahimHafez1&hide_border=true&theme=tokyonight" alt="GitHub streak">
-</p>
-
-### 🤝 Connect
-
-- 💼 **LinkedIn:** [ibrahim-hafez](https://linkedin.com/in/ibrahim-hafez-923307254)
-- 📫 **Email:** [ibrahimhafez24@gmail.com](mailto:ibrahimhafez24@gmail.com)
-- 📱 **Phone / WhatsApp:** [+20 101 109 4565](https://wa.me/201011094565)
-- 🌍 Based in Egypt · open to backend / Node.js opportunities
-
-<sub>Backend · Multi-tenant SaaS · System Design · Payments · Real-time · API Integration</sub>
+**Delivery and testing** · Docker, GitHub Actions, Jest, Playwright
